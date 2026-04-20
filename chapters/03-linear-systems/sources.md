@@ -18,5 +18,6 @@
 
 ## TODO
 
-- [ ] Write `notes.md`, `worked-examples.md`, `exercises.md`
-- [ ] Build `code/03_gauss_jordan.ipynb` (implement RREF from scratch + use `numpy.linalg.solve`)
+- [x] Write `notes.md`, `worked-examples.md`, `exercises.md`
+- [x] Build Python notebook (`code/python/03_linear_systems.ipynb`) — RREF from scratch + visualisations
+- [x] Build SageMath notebook (`code/sage/03_linear_systems.ipynb`) — exact arithmetic + parametric solutions + chemistry application
