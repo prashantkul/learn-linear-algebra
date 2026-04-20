@@ -24,5 +24,6 @@
 
 ## TODO
 
-- [ ] Write `notes.md`, `worked-examples.md`, `exercises.md`
-- [ ] Build `code/04_transformations.ipynb` with animated rotations/reflections/shears
+- [x] Write `notes.md`, `worked-examples.md`, `exercises.md`
+- [x] Build Python notebook (`code/python/04_linear_transformations.ipynb`) — catalog + composition + Gauss–Jordan inverse
+- [x] Build SageMath notebook (`code/sage/04_linear_transformations.ipynb`) — symbolic derivations + exercises
