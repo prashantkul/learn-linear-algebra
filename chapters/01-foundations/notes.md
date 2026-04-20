@@ -2,9 +2,30 @@
 
 > *"It is mathematics, and not just (as Bismarck claimed) politics, that consists in 'the art of the possible.'"* — Bretscher, Preface
 
-## 1.0 Why we start here
+## 1.0 A problem to anchor everything else
 
-Most linear algebra books start with matrices and equations. We're going to start one step earlier — with **sets**, **functions**, and the precise meaning of the word **linear**. Three reasons:
+Before any abstraction, here's a concrete question (borrowed from Saveliev §1.1):
+
+> *You sell a coffee blend. Kenyan beans cost \$2/lb. Colombian beans cost \$3/lb. You want to make 6 pounds of blend that sells for \$14 total. How many pounds of each?*
+
+Let `x` = pounds of Kenyan, `y` = pounds of Colombian. The two facts about the blend become two equations:
+
+```
+  x +  y =  6      (total weight)
+ 2x + 3y = 14      (total price)
+```
+
+This is a **system of two linear equations in two unknowns**. You can solve it three ways, and all three will reappear later in disguise:
+
+1. **Algebraically.** From the first, `y = 6 − x`. Substitute: `2x + 3(6 − x) = 14`, so `−x = −4`, giving `x = 4`, `y = 2`.
+2. **Geometrically.** Each equation is a line in the xy-plane. The solution is the point where they cross. Try sketching it.
+3. **By matrix machinery** (which we'll build over Chapters 3–4): write the system as `A**x** = **b**` and solve with Gauss–Jordan.
+
+Now scale the same idea up. A coffee shop has 30 beans. A portfolio has 500 stocks. A neural network has 10⁹ weights. The *kind* of problem doesn't change — we just need a language that doesn't choke on the size. **That language is linear algebra.**
+
+This chapter builds the foundations of that language: sets, functions, the precise meaning of "linear," and the leap from ℝ to ℝⁿ.
+
+**Why we start here, not at matrices.** Most linear algebra books open with matrix notation and Gaussian elimination. We deliberately step back one level — to **sets**, **functions**, and the precise meaning of the word **linear**. Three reasons:
 
 1. Every theorem in linear algebra is a statement about a particular kind of function (a "linear transformation"). If the word *function* feels fuzzy, the rest of the course will feel fuzzy too.
 2. The leap from ℝ² (the xy-plane you've drawn since high school) to ℝⁿ for n > 3 is not a leap of *visualization* — you can't picture ℝ⁴ — but a leap of **language**. Sets and functions are that language.
@@ -50,11 +71,55 @@ flowchart LR
 
 **Cartesian product.** Given sets A and B, the set of all *ordered pairs* `(a, b)` with `a ∈ A` and `b ∈ B` is written `A × B`. The familiar **xy-plane** is `ℝ × ℝ`, written `ℝ²`. The points `(2, 3)` and `(3, 2)` are different — order matters in a Cartesian product, unlike in a set.
 
+> **Ordered pair vs. set — this trips people up.** The notation `(a, b)` denotes an *ordered pair* (or *tuple*), where order matters: `(2, 3) ≠ (3, 2)`. The notation `{a, b}` denotes a *set*, where order doesn't: `{2, 3} = {3, 2}`. Same brackets in everyday speech, completely different objects in math.
+
 > **Saveliev pp. 12–17, 30–34** has many pictures of these ideas: marbles in a bag (a set is unordered), the xy-plane as ℝ × ℝ.
 
 ---
 
-## 1.2 Functions — the main character of the course
+## 1.2 Logic essentials: implication, equivalence, quantifiers
+
+Every definition and theorem in this course uses a few small logical building blocks. They take five minutes to learn and save you years.
+
+| Symbol | Reads as | Means |
+|---|---|---|
+| `⟹` | "implies" or "then" | If the left side is true, the right side is true too. (The reverse may or may not hold.) |
+| `⟺` | "if and only if" / "iff" | Both directions hold: each side is true exactly when the other is. |
+| `∀` | "for all" / "for every" | The statement holds for every choice. |
+| `∃` | "there exists" / "for some" | At least one example makes it true. |
+
+A few examples to anchor:
+
+- `x = 2 ⟹ x² = 4` is true. The reverse `x² = 4 ⟹ x = 2` is **false** (because `x = −2` also gives `x² = 4`).
+- `x is even ⟺ x is divisible by 2` is true — both directions.
+- "`f` is linear" really means: `∀ x, y, c : f(c·x + y) = c·f(x) + f(y)`. The "for all" is silent in everyday writing but always there.
+- "`A` is invertible" really means: `∃ B such that A·B = I`. The "there exists" is the existence of an inverse.
+
+When a definition includes a "for all" or a "there exists," **the whole game is checking it for the right number of cases** — sometimes one (a counterexample disproves "for all"), sometimes infinitely many (you need an algebraic argument).
+
+---
+
+## 1.3 Notation we'll use throughout
+
+These conventions hold for the whole course unless noted:
+
+| Notation | Meaning |
+|---|---|
+| `x, y, z, t` | Real-valued variables (unknowns or generic inputs). |
+| `a, b, c, k, m, n` | Real-valued constants (often integers). |
+| `i, j` | Index variables (positive integers). |
+| `**v**, **u**, **w**` (or just `v`, `u`, `w`) | Vectors. We'll usually skip the bold and rely on context. |
+| `A, B, M` | Matrices (or sometimes sets — context will tell). |
+| `xᵢ` | The *i*-th component of vector `x`. |
+| `ℝⁿ` | The set of all n-tuples of real numbers (n-dimensional Euclidean space). |
+| `:=` | "is defined as." We'll use plain `=` most of the time. |
+| `∑ᵢ xᵢ` | The sum `x₁ + x₂ + … + xₙ`. |
+
+Vectors are *columns* by default: `v = [v₁; v₂; …; vₙ]ᵀ`. We'll write them flat as `(v₁, v₂, …, vₙ)` when typesetting columns is awkward, but mentally treat them as columns.
+
+---
+
+## 1.4 Functions — the main character of the course
 
 A **function** `f: A → B` is a rule that assigns to each element of A *exactly one* element of B.
 
@@ -95,12 +160,14 @@ A bijective function has an **inverse** `f⁻¹: B → A`. This will matter a lo
 
 ---
 
-## 1.3 What does "linear" actually mean?
+## 1.5 What does "linear" actually mean?
 
 Forget for a moment everything you've heard about matrices. Look at a single-variable function `f: ℝ → ℝ`. We say `f` is **linear** if it satisfies two rules:
 
 1. **Additivity:** `f(x + y) = f(x) + f(y)` for all x, y ∈ ℝ.
 2. **Homogeneity:** `f(c · x) = c · f(x)` for all x ∈ ℝ and all scalars c ∈ ℝ.
+
+> **What's a "scalar"?** In this course it just means a real number. We use the word *scalar* (rather than "number") to flag the role: it's the **multiplier** acting on a vector, not the vector itself. When we write `c · v`, `c` is the scalar and `v` is the vector. Both happen to be real-valued; the word distinguishes their jobs.
 
 Equivalently (and this single equation is the most useful form to remember):
 
@@ -144,7 +211,19 @@ flowchart TD
 
 ---
 
-## 1.4 The leap from ℝ to ℝⁿ
+## 1.6 The leap from ℝ to ℝⁿ
+
+### 1.6.1 Pictures you already know: ℝ¹, ℝ², ℝ³
+
+Before we generalize, let's name what you've already drawn:
+
+- **ℝ¹** is the **real number line**: a horizontal line with `0` in the middle, positive numbers to the right, negative to the left. Each point on the line *is* a single real number. So `ℝ¹` and `ℝ` are the same object.
+- **ℝ²** is the **xy-plane** (Cartesian coordinates): two perpendicular axes meeting at the **origin** `(0, 0)`. Each point is an ordered pair `(x, y)`. The plane has four **quadrants**, and you've drawn lines, parabolas, and circles on it since middle school.
+- **ℝ³** is **3D space**: three mutually perpendicular axes (x, y, z) meeting at the origin. Each point is an ordered triple `(x, y, z)`. Think of the corner of a room: floor-edges as x and y axes, vertical edge as z axis.
+
+These three you can *see*. They're the warm-up. Linear algebra's superpower is what happens next.
+
+### 1.6.2 Why we need ℝⁿ
 
 So far our inputs and outputs were single real numbers. But the real reason linear algebra exists is that real-world quantities come in **bundles**:
 
@@ -184,7 +263,7 @@ This is the central liberation of the course: once you trust the algebra, you ca
 
 ---
 
-## 1.5 Vectors: arrows and tuples (and why both views matter)
+## 1.7 Vectors: arrows and tuples (and why both views matter)
 
 A **vector** in ℝⁿ is an element of ℝⁿ — that is, an n-tuple of real numbers. We typically write it as a column:
 
@@ -244,7 +323,7 @@ That's it. From these two operations everything else in the course will follow.
 
 ---
 
-## 1.6 The big picture: where we're heading
+## 1.8 The big picture: where we're heading
 
 Linear algebra studies functions `T : ℝⁿ → ℝᵐ` that are **linear**:
 
