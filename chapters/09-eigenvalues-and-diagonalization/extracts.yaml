@@ -1,0 +1,9 @@
+# Page ranges (book page numbers) to extract for Chapter 9's NotebookLM notebook.
+extracts:
+  - book: bretscher
+    pages: "310-384"
+    title: "Bretscher Ch 7 — Eigenvalues and Eigenvectors (diagonalization, dynamical systems, complex eigenvalues, stability)"
+
+  - book: saveliev
+    pages: "373-404"
+    title: "Saveliev 5.6, 5.7, 5.9 — Eigenvalues, significance of eigenvectors, classification"

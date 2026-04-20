@@ -1,0 +1,9 @@
+# Page ranges (book page numbers) to extract for Chapter 8's NotebookLM notebook.
+extracts:
+  - book: bretscher
+    pages: "265-309"
+    title: "Bretscher Ch 6 — Determinants (intro, properties, geometric interpretation, Cramer's rule)"
+
+  - book: saveliev
+    pages: "367-372"
+    title: "Saveliev 5.5 — The determinant of a matrix"

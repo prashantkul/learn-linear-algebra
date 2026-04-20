@@ -1,0 +1,9 @@
+# Page ranges (book page numbers) to extract for Chapter 3's NotebookLM notebook.
+extracts:
+  - book: bretscher
+    pages: "1-40"
+    title: "Bretscher Ch 1 — Linear Equations (systems, Gauss-Jordan, matrix algebra)"
+
+  - book: saveliev
+    pages: "7-11"
+    title: "Saveliev 1.1 — Introduction to linear algebra (motivating example)"

@@ -1,0 +1,13 @@
+# Page ranges (book page numbers) to extract for Chapter 4's NotebookLM notebook.
+extracts:
+  - book: bretscher
+    pages: "41-109"
+    title: "Bretscher Ch 2 — Linear Transformations (intro, geometry, products, inverses)"
+
+  - book: saveliev
+    pages: "188-194"
+    title: "Saveliev 3.4 — Linear transformations of the plane"
+
+  - book: saveliev
+    pages: "329-416"
+    title: "Saveliev Ch 5 — Linear operators (matrices, operators, algebra, compositions)"

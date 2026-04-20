@@ -1,0 +1,9 @@
+# Page ranges (book page numbers) to extract for Chapter 7's NotebookLM notebook.
+extracts:
+  - book: bretscher
+    pages: "202-264"
+    title: "Bretscher Ch 5 — Orthogonality and Least Squares (projections, Gram-Schmidt, QR, least squares, inner product spaces)"
+
+  - book: saveliev
+    pages: "312-328"
+    title: "Saveliev 4.10-4.11 — Dot product and projections (review)"

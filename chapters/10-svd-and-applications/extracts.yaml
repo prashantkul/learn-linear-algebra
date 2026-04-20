@@ -1,0 +1,13 @@
+# Page ranges (book page numbers) to extract for Chapter 10's NotebookLM notebook.
+extracts:
+  - book: bretscher
+    pages: "385-414"
+    title: "Bretscher Ch 8 — Symmetric Matrices, Quadratic Forms, Singular Values"
+
+  - book: bretscher
+    pages: "415-456"
+    title: "Bretscher Ch 9 — Linear Differential Equations (bonus)"
+
+  - book: saveliev
+    pages: "417-490"
+    title: "Saveliev Ch 6 — A bird's-eye view of basic calculus (bonus, linear algebra <-> calculus bridge)"

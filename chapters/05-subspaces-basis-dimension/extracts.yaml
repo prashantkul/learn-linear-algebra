@@ -1,0 +1,9 @@
+# Page ranges (book page numbers) to extract for Chapter 5's NotebookLM notebook.
+extracts:
+  - book: bretscher
+    pages: "110-165"
+    title: "Bretscher Ch 3 — Subspaces of R^n (image/kernel, bases, dimension, coordinates)"
+
+  - book: saveliev
+    pages: "391-396"
+    title: "Saveliev 5.8 — Bases"

@@ -1,0 +1,6 @@
+# Page ranges (book page numbers) to extract for Chapter 6's NotebookLM notebook.
+# Saveliev does not cover abstract linear spaces — Bretscher carries this chapter.
+extracts:
+  - book: bretscher
+    pages: "166-201"
+    title: "Bretscher Ch 4 — Linear (Vector) Spaces (intro, isomorphisms, matrix of an LT)"

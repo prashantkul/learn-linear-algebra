@@ -1,0 +1,19 @@
+# Page ranges (book page numbers) to extract for Chapter 1's NotebookLM notebook.
+# Mirrors the references in sources.md. Run via:
+#   uv run scripts/extract_pages.py chapters/01-foundations
+extracts:
+  - book: bretscher
+    pages: "457-466"
+    title: "Bretscher App. A — Vectors"
+
+  - book: saveliev
+    pages: "7-87"
+    title: "Saveliev Ch 1 — Sets and functions"
+
+  - book: saveliev
+    pages: "88-156"
+    title: "Saveliev Ch 2 — Functions as transformations"
+
+  - book: saveliev
+    pages: "239-281"
+    title: "Saveliev 4.1-4.5 — Multidimensional spaces (intro through R^n)"

@@ -1,0 +1,9 @@
+# Page ranges (book page numbers) to extract for Chapter 2's NotebookLM notebook.
+extracts:
+  - book: bretscher
+    pages: "457-466"
+    title: "Bretscher App. A — Vectors"
+
+  - book: saveliev
+    pages: "282-328"
+    title: "Saveliev 4.6-4.11 — Vector geometry (algebra, magnitude, lines, dot product, projections)"
