@@ -540,26 +540,38 @@ We'll explore this empirically in the Python notebook for this chapter.
 
 ```mermaid
 flowchart TD
+    classDef done fill:#94a3b8,stroke:#475569,color:#fff,stroke-width:2px
     classDef now fill:#3b82f6,stroke:#1e40af,color:#fff,stroke-width:3px
     classDef next fill:#10b981,stroke:#047857,color:#fff,stroke-width:2px
     classDef far fill:#a78bfa,stroke:#6d28d9,color:#fff,stroke-width:2px
     classDef cap fill:#ec4899,stroke:#9d174d,color:#fff,stroke-width:2px
 
+    C1["Ch 1 — Foundations<br/>sets · functions · linearity · ℝⁿ"]:::done
     C2["Ch 2 — Vector geometry<br/>dot product · projection · angle<br/><i>you are here</i>"]:::now
-    C3["Ch 3 — Linear systems<br/>parametric solutions<br/>(uses §2.9)"]:::next
+    C3["Ch 3 — Linear systems<br/>Gauss–Jordan · parametric solutions<br/>(uses §2.9)"]:::next
     C4["Ch 4 — Linear maps<br/>matrix · vector = list of dot products"]:::next
-    C7["Ch 7 — Orthogonality<br/>Gram-Schmidt · QR · least squares<br/>(generalizes §2.8 projection)"]:::far
+    C5["Ch 5 — Subspaces<br/>image · kernel · basis · dimension"]:::far
+    C6["Ch 6 — Abstract vector spaces<br/>polynomials, functions as 'vectors'"]:::far
+    C7["Ch 7 — Orthogonality<br/>Gram–Schmidt · QR · least squares<br/>(generalizes §2.8 projection)"]:::far
+    C8["Ch 8 — Determinants<br/>volume · invertibility"]:::far
     C9["Ch 9 — Eigenvectors<br/>directions of pure stretch<br/>(uses ‖·‖ for normalization)"]:::far
     C10["Ch 10 — SVD<br/>the master decomposition<br/>(angles between subspaces!)"]:::cap
 
+    C1 --> C2
     C2 --> C3
     C2 --> C4
+    C3 --> C4
+    C4 --> C5
+    C5 --> C6
+    C5 --> C7
     C2 --> C7
-    C7 --> C9
+    C5 --> C8
+    C8 --> C9
     C7 --> C10
+    C9 --> C10
 ```
 
-The dot product is not a one-chapter idea. It's the through-line for the second half of the course.
+The dot product is not a one-chapter idea. It's the through-line for the second half of the course — and Ch 5 (subspaces) and Ch 6 (abstract spaces) sit on the dependency path between here and the orthogonality / SVD machinery of Chapters 7 and 10.
 
 ---
 
