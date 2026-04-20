@@ -27,4 +27,5 @@ By the end of this chapter you will:
 - `worked-examples.md` — 6 solved problems.
 - `exercises.md` — practice with answers at the bottom.
 - `sources.md` — Bretscher and Saveliev page references; external links.
-- `code/01_foundations.ipynb` — Python notebook for hands-on play.
+- `code/python/01_foundations.ipynb` — NumPy / matplotlib notebook (numerical, with pictures).
+- `code/sage/01_foundations.ipynb` — SageMath notebook (exact symbolic arithmetic; run free in [CoCalc](https://cocalc.com/) or locally with `sage -n jupyter`).

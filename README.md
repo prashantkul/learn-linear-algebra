@@ -1,6 +1,6 @@
 # Learn Linear Algebra
 
-A self-study curriculum in 10 chapters, anchored on two textbooks. Each chapter ships with notes, worked examples, exercises, a Python notebook, and a **pre-built [NotebookLM](https://notebooklm.google.com/) notebook** with audio overview (podcast), quiz, mind map, slide deck, and infographic.
+A self-study curriculum in 10 chapters, anchored on two textbooks. Each chapter ships with notes, worked examples, exercises, **two Jupyter notebooks** (NumPy for numerics, SageMath for exact symbolics — runnable free in [CoCalc](https://cocalc.com/)), and a **pre-built [NotebookLM](https://notebooklm.google.com/) notebook** with audio overview (podcast), quiz, mind map, slide deck, and infographic.
 
 ## 🎧 Start here
 

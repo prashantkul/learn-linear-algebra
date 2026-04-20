@@ -21,7 +21,9 @@ learn-linear-algebra/
     sources.md                    # page references and external links
     extracts.yaml                 # which pages to slice from source PDFs
     extracts/                     # gitignored — generated PDFs
-    code/                         # Jupyter notebooks
+    code/
+      python/                     # NumPy/matplotlib/sympy notebooks (uv kernel)
+      sage/                       # SageMath notebooks (Sage kernel)
     visuals/                      # diagram references
   scripts/
     extract_pages.py              # PDF excerpter (uv run)
@@ -46,18 +48,32 @@ Both files are in `.gitignore`.
 - Otto Bretscher, *Linear Algebra with Applications*, 5th ed. (Pearson, 2013, ISBN 978-0-321-79697-4).
 - Peter Saveliev, *Linear Algebra Illustrated* — available from the author at https://calculus123.com/.
 
-### 2. Python environment (uv)
+### 2. Python environment for the NumPy notebooks (uv)
 
 This is a [uv](https://docs.astral.sh/uv/)-managed project. From the repo root:
 
 ```bash
 uv sync                        # creates .venv and installs deps
-uv run jupyter lab             # opens the chapter notebooks in your browser
+uv run jupyter lab             # opens the Python notebooks in your browser
 ```
 
 Add new dependencies with `uv add <package>` (do not use `pip` directly).
 
-### 3. NotebookLM CLI (only if regenerating notebooks)
+### 3. SageMath for the symbolic notebooks
+
+Each chapter has both a NumPy notebook (`code/python/NN_*.ipynb`) and a SageMath notebook (`code/sage/NN_*.ipynb`). The Sage one uses exact arithmetic and Sage's first-class `Matrix`/`vector` types.
+
+**Two ways to run the Sage notebooks:**
+
+- **Easiest — [CoCalc](https://cocalc.com/) in the browser.** Sign in (free tier works), create a project, *Files → New → From URL*, and paste the raw GitHub URL of the `.ipynb`. CoCalc has SageMath pre-installed.
+- **Local install** (large download, ~3 GB):
+  - macOS: `brew install --cask sage`
+  - Linux: package manager or the [official installer](https://www.sagemath.org/download.html)
+  - Then run `sage -n jupyter` to open Jupyter with the SageMath kernel.
+
+You don't need Sage installed locally to edit the `.ipynb` source — any text editor or Jupyter-without-Sage will let you change cells. You just won't be able to run them.
+
+### 4. NotebookLM CLI (only if regenerating notebooks)
 
 The publishing pipeline uses the [`nlm` CLI](https://github.com/jacob-bd/notebooklm-mcp-cli). Install and authenticate it:
 
