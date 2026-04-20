@@ -19,7 +19,8 @@
 #   --mindmap         Generate a mind map.
 #   --slides          Generate a slide deck.
 #   --infographic     Generate an infographic.
-#   --all             Shorthand for: --with-extracts --audio --quiz --mindmap --slides --infographic
+#   --share           Make the notebook publicly accessible (anyone with link can view + copy).
+#   --all             Shorthand for: --with-extracts --audio --quiz --mindmap --slides --infographic --share
 #   --dry-run         Print what would happen without doing anything.
 
 set -euo pipefail
@@ -38,6 +39,7 @@ WANT_QUIZ=0
 WANT_MINDMAP=0
 WANT_SLIDES=0
 WANT_INFOGRAPHIC=0
+WANT_SHARE=0
 DRY_RUN=0
 
 for arg in "$@"; do
@@ -48,6 +50,7 @@ for arg in "$@"; do
     --mindmap)       WANT_MINDMAP=1 ;;
     --slides)        WANT_SLIDES=1 ;;
     --infographic)   WANT_INFOGRAPHIC=1 ;;
+    --share)         WANT_SHARE=1 ;;
     --all)
       WITH_EXTRACTS=1
       WANT_AUDIO=1
@@ -55,6 +58,7 @@ for arg in "$@"; do
       WANT_MINDMAP=1
       WANT_SLIDES=1
       WANT_INFOGRAPHIC=1
+      WANT_SHARE=1
       ;;
     --dry-run) DRY_RUN=1 ;;
     *) echo "unknown flag: $arg" >&2; exit 1 ;;
@@ -147,8 +151,16 @@ if [[ "$WANT_INFOGRAPHIC" == "1" ]]; then
   echo "==> Generating infographic"
   run nlm infographic create "$NOTEBOOK_ID" -y
 fi
+if [[ "$WANT_SHARE" == "1" ]]; then
+  echo
+  echo "==> Enabling public sharing"
+  run nlm share public "$NOTEBOOK_ID"
+fi
 
 echo
 echo "==> Done."
 echo "    Notebook ID: $NOTEBOOK_ID"
 echo "    Open at: https://notebooklm.google.com/notebook/$NOTEBOOK_ID"
+if [[ "$WANT_SHARE" == "1" ]]; then
+  echo "    (Public — add this URL to README.md and notebooks.md)"
+fi

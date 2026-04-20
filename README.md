@@ -1,6 +1,12 @@
 # Learn Linear Algebra
 
-A self-study curriculum in 10 chapters, anchored on two textbooks and designed to be ingested chapter-by-chapter into [NotebookLM](https://notebooklm.google.com/).
+A self-study curriculum in 10 chapters, anchored on two textbooks. Each chapter ships with notes, worked examples, exercises, a Python notebook, and a **pre-built NotebookLM notebook** with audio overview (podcast), quiz, mind map, slides, and infographic.
+
+## 🎧 Just want to learn? Use the pre-built NotebookLMs.
+
+You don't need to clone this repo. **[See the NotebookLM index →](notebooks.md)**
+
+Each public notebook gives you the chapter's notes + textbook page extracts + AI-generated audio overview, quiz, mind map, slides, and infographic — and you can chat with the sources or *"Make a copy"* to your own account.
 
 ## Source texts
 
@@ -18,9 +24,13 @@ books/LinearAlgebraIllustratedSaveliev.pdf
 
 The `books/` folder is gitignored, as are the per-chapter `extracts/` folders the page-extractor produces. The page references in each chapter's `sources.md` (and the page ranges in `extracts.yaml`) refer to *book page numbers* (the numbers printed on the page), not PDF page numbers; the extractor handles the offset.
 
+## 🔧 Want to customize / contribute / regenerate?
+
+Read on. The rest of this README explains the repo layout, how to extract chapter-specific PDF excerpts from your own copies of the textbooks, and how to programmatically push your own NotebookLM notebooks via the [`nlm` CLI](https://github.com/jacob-bd/notebooklm-mcp-cli).
+
 ## How to use this with NotebookLM
 
-This repo plays well with the [`nlm` CLI](https://github.com/jacob-bd/notebooklm-mcp-cli). Once you're authenticated (`nlm doctor` to check), each chapter becomes its own NotebookLM notebook in two steps.
+Once you're authenticated (`nlm doctor` to check), each chapter becomes its own NotebookLM notebook in two steps.
 
 **Step 1 — Extract the relevant pages from the source PDFs.** Each chapter has an `extracts.yaml` listing which Bretscher/Saveliev page ranges to slice out:
 
@@ -63,18 +73,18 @@ The Python notebooks in each chapter's `code/` folder are for hands-on numerical
 
 ## Chapter map
 
-| # | Chapter | Bretscher | Saveliev |
-|---|---|---|---|
-| 1 | Foundations: sets, functions, linearity, R^n | App. A | Ch. 1, 2, 4.1–4.5 |
-| 2 | Vectors & vector geometry (dot product, projections) | App. A | 4.6–4.11 |
-| 3 | Linear systems & Gauss–Jordan elimination | Ch. 1 | §1.1 |
-| 4 | Linear transformations & matrix algebra | Ch. 2 | §3.4, 5.1–5.4, 5.10–5.11 |
-| 5 | Subspaces, image/kernel, basis, dimension, coordinates | Ch. 3 | §5.8 |
-| 6 | Abstract linear (vector) spaces | Ch. 4 | — |
-| 7 | Orthogonality, projections, Gram–Schmidt, QR, least squares | Ch. 5 | §4.10–4.11 |
-| 8 | Determinants — algebra and geometry | Ch. 6 | §5.5 |
-| 9 | Eigenvalues, eigenvectors, diagonalization, dynamical systems | Ch. 7 | §5.6–5.7, 5.9 |
-| 10 | Symmetric matrices, quadratic forms, SVD, applications | Ch. 8, 9 | (Ch. 6 as bonus) |
+| # | Chapter | Bretscher | Saveliev | NotebookLM |
+|---|---|---|---|---|
+| 1 | Foundations: sets, functions, linearity, ℝⁿ | App. A | Ch. 1, 2, 4.1–4.5 | [open ↗](https://notebooklm.google.com/notebook/d52edb24-e2e2-43b6-840d-a2c5d7a47519) |
+| 2 | Vectors & vector geometry (dot product, projections) | App. A | 4.6–4.11 | _coming soon_ |
+| 3 | Linear systems & Gauss–Jordan elimination | Ch. 1 | §1.1 | _coming soon_ |
+| 4 | Linear transformations & matrix algebra | Ch. 2 | §3.4, 5.1–5.4, 5.10–5.11 | _coming soon_ |
+| 5 | Subspaces, image/kernel, basis, dimension, coordinates | Ch. 3 | §5.8 | _coming soon_ |
+| 6 | Abstract linear (vector) spaces | Ch. 4 | — | _coming soon_ |
+| 7 | Orthogonality, projections, Gram–Schmidt, QR, least squares | Ch. 5 | §4.10–4.11 | _coming soon_ |
+| 8 | Determinants — algebra and geometry | Ch. 6 | §5.5 | _coming soon_ |
+| 9 | Eigenvalues, eigenvectors, diagonalization, dynamical systems | Ch. 7 | §5.6–5.7, 5.9 | _coming soon_ |
+| 10 | Symmetric matrices, quadratic forms, SVD, applications | Ch. 8, 9 | (Ch. 6 as bonus) | _coming soon_ |
 
 ## Per-chapter folder layout
 

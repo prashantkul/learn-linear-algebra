@@ -1,5 +1,7 @@
 # Chapter 1 — Foundations: Sets, Functions, Linearity, ℝⁿ
 
+> 🎧 **Pre-built NotebookLM:** [open it here](https://notebooklm.google.com/notebook/d52edb24-e2e2-43b6-840d-a2c5d7a47519) — audio overview (podcast), quiz, mind map, slide deck, infographic, and chat. Click *"Make a copy"* in NotebookLM to clone it to your own account.
+
 ## Learning objectives
 
 By the end of this chapter you will:
