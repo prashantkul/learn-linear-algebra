@@ -124,20 +124,25 @@ Together they give you the same idea from four directions. That redundancy is th
 
 ## Chapter map
 
-| # | Chapter | Bretscher | Saveliev | NotebookLM |
-|---|---|---|---|---|
-| 1 | Foundations: sets, functions, linearity, ℝⁿ | App. A | Ch. 1, 2, 4.1–4.5 | [open ↗](https://notebooklm.google.com/notebook/d52edb24-e2e2-43b6-840d-a2c5d7a47519) |
-| 2 | Vectors & vector geometry (dot product, projections) | App. A | 4.6–4.11 | _coming soon_ |
-| 3 | Linear systems & Gauss–Jordan elimination | Ch. 1 | §1.1 | _coming soon_ |
-| 4 | Linear transformations & matrix algebra | Ch. 2 | §3.4, 5.1–5.4, 5.10–5.11 | _coming soon_ |
-| 5 | Subspaces, image/kernel, basis, dimension, coordinates | Ch. 3 | §5.8 | _coming soon_ |
-| 6 | Abstract linear (vector) spaces | Ch. 4 | — | _coming soon_ |
-| 7 | Orthogonality, projections, Gram–Schmidt, QR, least squares | Ch. 5 | §4.10–4.11 | _coming soon_ |
-| 8 | Determinants — algebra and geometry | Ch. 6 | §5.5 | _coming soon_ |
-| 9 | Eigenvalues, eigenvectors, diagonalization, dynamical systems | Ch. 7 | §5.6–5.7, 5.9 | _coming soon_ |
-| 10 | Symmetric matrices, quadratic forms, SVD, applications | Ch. 8, 9 | (Ch. 6 as bonus) | _coming soon_ |
+| # | Chapter | Sources (Bretscher · Saveliev) | NotebookLM 🎧 | 🐍 Python | 🧮 SageMath |
+|---|---|---|---|---|---|
+| 1 | Foundations: sets, functions, linearity, ℝⁿ | App. A · Ch. 1, 2, 4.1–4.5 | [open ↗](https://notebooklm.google.com/notebook/d52edb24-e2e2-43b6-840d-a2c5d7a47519) | [view](chapters/01-foundations/code/python/01_foundations.ipynb) | [view](chapters/01-foundations/code/sage/01_foundations.ipynb) |
+| 2 | Vectors & vector geometry (dot product, projections) | App. A · 4.6–4.11 | _soon_ | _soon_ | _soon_ |
+| 3 | Linear systems & Gauss–Jordan elimination | Ch. 1 · §1.1 | _soon_ | _soon_ | _soon_ |
+| 4 | Linear transformations & matrix algebra | Ch. 2 · §3.4, 5.1–5.4, 5.10–5.11 | _soon_ | _soon_ | _soon_ |
+| 5 | Subspaces, image/kernel, basis, dimension, coordinates | Ch. 3 · §5.8 | _soon_ | _soon_ | _soon_ |
+| 6 | Abstract linear (vector) spaces | Ch. 4 · — | _soon_ | _soon_ | _soon_ |
+| 7 | Orthogonality, projections, Gram–Schmidt, QR, least squares | Ch. 5 · §4.10–4.11 | _soon_ | _soon_ | _soon_ |
+| 8 | Determinants — algebra and geometry | Ch. 6 · §5.5 | _soon_ | _soon_ | _soon_ |
+| 9 | Eigenvalues, eigenvectors, diagonalization, dynamical systems | Ch. 7 · §5.6–5.7, 5.9 | _soon_ | _soon_ | _soon_ |
+| 10 | Symmetric matrices, quadratic forms, SVD, applications | Ch. 8, 9 · (Ch. 6 as bonus) | _soon_ | _soon_ | _soon_ |
 
-The text and Python code for every chapter also live in this repo under [`chapters/`](chapters/) — read them on GitHub, or open the Jupyter notebooks locally if you want to play with the math.
+**Running the notebooks**
+
+- 🐍 **Python** — `uv sync && uv run jupyter lab` from the repo root, then open the file. (See [CONTRIBUTING.md](CONTRIBUTING.md) for setup.)
+- 🧮 **SageMath** — easiest path: open [CoCalc](https://cocalc.com/), create a project, *Files → New → From URL*, paste the raw GitHub URL of the `.ipynb`. CoCalc has SageMath pre-installed and runs free in the browser. Or install Sage locally (`brew install --cask sage` on macOS) and run `sage -n jupyter`.
+
+Every chapter's text also lives in this repo under [`chapters/`](chapters/) — read it directly on GitHub.
 
 ## Audience and depth
 
