@@ -17,5 +17,6 @@
 
 ## TODO
 
-- [ ] Write `notes.md`, `worked-examples.md`, `exercises.md`
-- [ ] Build `code/06_abstract_spaces.ipynb` (treat polynomials of degree ≤ n as a vector space, build differentiation as a matrix)
+- [x] Write `notes.md`, `worked-examples.md`, `exercises.md`
+- [x] Build Python notebook (`code/python/06_abstract_spaces.ipynb`) — polynomials as coefficient vectors, differentiation / integration / multiplication-by-`x` as matrices, similarity check for `T(p) = p + p'`, derivative on a 5-dim Fourier-like subspace, polynomial interpolation as basis change
+- [x] Build SageMath notebook (`code/sage/06_abstract_spaces.ipynb`) — symbolic axiom verification, `PolynomialRing(QQ)`, derivative matrix via coefficients, `D ∘ M_x` as matrix product, similarity in Lagrange basis, trace-zero subspace, 5 exercises with solutions
