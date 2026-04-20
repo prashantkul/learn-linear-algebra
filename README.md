@@ -1,75 +1,12 @@
 # Learn Linear Algebra
 
-A self-study curriculum in 10 chapters, anchored on two textbooks. Each chapter ships with notes, worked examples, exercises, a Python notebook, and a **pre-built NotebookLM notebook** with audio overview (podcast), quiz, mind map, slides, and infographic.
+A self-study curriculum in 10 chapters, anchored on two textbooks. Each chapter ships with notes, worked examples, exercises, a Python notebook, and a **pre-built [NotebookLM](https://notebooklm.google.com/) notebook** with audio overview (podcast), quiz, mind map, slide deck, and infographic.
 
-## 🎧 Just want to learn? Use the pre-built NotebookLMs.
+## 🎧 Start here
 
-You don't need to clone this repo. **[See the NotebookLM index →](notebooks.md)**
+You don't need to clone anything. **[Open the NotebookLM index →](notebooks.md)**
 
-Each public notebook gives you the chapter's notes + textbook page extracts + AI-generated audio overview, quiz, mind map, slides, and infographic — and you can chat with the sources or *"Make a copy"* to your own account.
-
-## Source texts
-
-This curriculum is anchored on two textbooks. **You need to obtain your own copies** — they are not included in this repo (they're copyrighted).
-
-- **Otto Bretscher — *Linear Algebra with Applications*, 5th ed.** (Pearson, 2013, ISBN 978-0-321-79697-4) — the computational and applications-focused spine. Drives chapter ordering from Chapter 3 onward.
-- **Peter Saveliev — *Linear Algebra Illustrated*** — the visual, foundations-up companion. Provides geometric intuition and diagrams. Available from the author at https://calculus123.com/.
-
-Place your PDFs at:
-
-```
-books/Bretscher.pdf
-books/LinearAlgebraIllustratedSaveliev.pdf
-```
-
-The `books/` folder is gitignored, as are the per-chapter `extracts/` folders the page-extractor produces. The page references in each chapter's `sources.md` (and the page ranges in `extracts.yaml`) refer to *book page numbers* (the numbers printed on the page), not PDF page numbers; the extractor handles the offset.
-
-## 🔧 Want to customize / contribute / regenerate?
-
-Read on. The rest of this README explains the repo layout, how to extract chapter-specific PDF excerpts from your own copies of the textbooks, and how to programmatically push your own NotebookLM notebooks via the [`nlm` CLI](https://github.com/jacob-bd/notebooklm-mcp-cli).
-
-## How to use this with NotebookLM
-
-Once you're authenticated (`nlm doctor` to check), each chapter becomes its own NotebookLM notebook in two steps.
-
-**Step 1 — Extract the relevant pages from the source PDFs.** Each chapter has an `extracts.yaml` listing which Bretscher/Saveliev page ranges to slice out:
-
-```bash
-uv run scripts/extract_pages.py chapters/01-foundations
-# writes chapters/01-foundations/extracts/*.pdf
-```
-
-The extractor handles per-book page-number offsets (Bretscher's front matter pushes book p.1 to PDF p.20; Saveliev has no offset).
-
-**Step 2 — Create the NotebookLM notebook and (optionally) generate artifacts.**
-
-```bash
-# Markdown sources only
-./scripts/nlm-init-chapter.sh chapters/01-foundations
-
-# Markdown + extracted PDF excerpts
-./scripts/nlm-init-chapter.sh chapters/01-foundations --with-extracts
-
-# Full pipeline: extracts + audio overview (podcast) + quiz + mind map + slides
-./scripts/nlm-init-chapter.sh chapters/01-foundations --all
-
-# Show commands without executing
-./scripts/nlm-init-chapter.sh chapters/01-foundations --all --dry-run
-```
-
-Individual artifact flags (`--audio`, `--quiz`, `--mindmap`, `--slides`, `--infographic`) can be combined as you like.
-
-The script creates a notebook named *"LA Ch.NN — chapter-slug"* and uploads `notes.md`, `worked-examples.md`, `exercises.md`, and `sources.md`. With `--with-extracts`, it also uploads the per-chapter extracted PDFs.
-
-Once the notebook exists, you can also use the `nlm` CLI directly:
-
-- chat with sources: `nlm query <notebook-id> "explain the linearity test"`
-- create flashcards: `nlm flashcards create <notebook-id>`
-- download audio: `nlm download audio <notebook-id>`
-
-Or open it in the [NotebookLM web UI](https://notebooklm.google.com/) for the full interactive experience.
-
-The Python notebooks in each chapter's `code/` folder are for hands-on numerical experimentation — run them locally rather than uploading them to NotebookLM.
+Each public NotebookLM gives you the chapter's notes + textbook page extracts + AI-generated audio overview, quiz, mind map, slides, and infographic — and you can chat with the sources. Click *"Make a copy"* in NotebookLM to clone it to your own account and customize.
 
 ## Chapter map
 
@@ -86,63 +23,25 @@ The Python notebooks in each chapter's `code/` folder are for hands-on numerical
 | 9 | Eigenvalues, eigenvectors, diagonalization, dynamical systems | Ch. 7 | §5.6–5.7, 5.9 | _coming soon_ |
 | 10 | Symmetric matrices, quadratic forms, SVD, applications | Ch. 8, 9 | (Ch. 6 as bonus) | _coming soon_ |
 
-## Per-chapter folder layout
-
-```
-chapters/NN-topic/
-  README.md           # objectives, prereqs, time estimate
-  notes.md            # main tutorial — the "textbook" source for NotebookLM
-  worked-examples.md  # solved problems, step by step
-  exercises.md        # practice problems with answers
-  sources.md          # Bretscher §X.Y pp. A–B, Saveliev §X.Y pp. C–D, external links
-  code/               # Jupyter notebooks (NumPy + matplotlib + sympy)
-  visuals/            # citations of diagrams (page references), or original figures
-```
-
-## Python setup
-
-This is a `uv`-managed project. From the repo root:
-
-```bash
-uv sync                        # creates .venv and installs deps from pyproject.toml/uv.lock
-uv run jupyter lab             # opens the notebooks in your browser
-```
-
-To add a new dependency: `uv add <package>`.
-
-## Repo layout
-
-```
-learn-linear-algebra/
-  README.md                       # this file
-  pyproject.toml                  # uv project + Python deps
-  uv.lock                         # locked dependency versions
-  books/                          # source PDFs (Bretscher, Saveliev)
-  chapters/NN-topic/
-    README.md                     # chapter objectives
-    notes.md                      # main tutorial
-    worked-examples.md            # solved problems
-    exercises.md                  # practice + answers
-    sources.md                    # page references and external links
-    extracts.yaml                 # which pages to slice from source PDFs
-    extracts/*.pdf                # generated by scripts/extract_pages.py
-    code/                         # Jupyter notebooks
-    visuals/                      # diagram references
-  scripts/
-    extract_pages.py              # PDF extractor (uv run)
-    nlm-init-chapter.sh           # create NotebookLM notebook for a chapter
-```
+The text and Python code for every chapter also live in this repo under [`chapters/`](chapters/) — read them on GitHub, or open the Jupyter notebooks locally if you want to play with the math.
 
 ## Audience and depth
 
 Self-study, undergraduate level. Intuition first, proofs sketched (not belabored). Geometric pictures wherever possible. Every concept has at least one worked example and one exercise.
 
+## Source texts
+
+This curriculum is anchored on (and respects the copyrights of) two excellent textbooks. The page extracts in the NotebookLM notebooks fall under fair-use educational commentary; the books themselves are not redistributed.
+
+- **Otto Bretscher — *Linear Algebra with Applications*, 5th ed.** (Pearson, 2013, ISBN 978-0-321-79697-4) — the computational and applications-focused spine.
+- **Peter Saveliev — *Linear Algebra Illustrated*** — the visual, foundations-up companion. Available from the author at https://calculus123.com/.
+
+If you want a deeper read, get your own copies of these books — they're worth it.
+
 ## License
 
 Tutorial material (notes, worked examples, exercises, code, scripts) is licensed under the MIT License — see [LICENSE](LICENSE).
 
-The two source textbooks (Bretscher, Saveliev) are copyrighted and **not** included in this repo. Users must obtain their own copies. See the *Source texts* section above.
-
 ## Contributing
 
-Contributions are welcome — improvements to explanations, more worked examples, better exercises, additional code, or translations. Open an issue or PR.
+Want to improve an explanation, add a worked example, fix an exercise, or contribute a translation? See [CONTRIBUTING.md](CONTRIBUTING.md) for the dev setup (uv, PDF extraction, NotebookLM publishing pipeline) and how to send a PR.
