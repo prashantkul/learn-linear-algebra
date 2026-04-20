@@ -37,6 +37,17 @@ We write `x ∈ S` to mean "x is an element of S" and `x ∉ S` for "x is not an
 
 **Subset.** `A ⊆ B` means every element of A is also in B. So `{1, 2} ⊆ {1, 2, 3}` and `ℕ ⊆ ℤ ⊆ ℚ ⊆ ℝ ⊆ ℂ`.
 
+```mermaid
+flowchart LR
+    classDef ring fill:#dbeafe,stroke:#1e40af,color:#1e3a8a,stroke-width:2px
+    N["ℕ<br/>natural<br/>0, 1, 2, …"]:::ring
+    Z["ℤ<br/>integers<br/>…, −1, 0, 1, …"]:::ring
+    Q["ℚ<br/>rationals<br/>p/q"]:::ring
+    R["ℝ<br/>reals<br/>the number line"]:::ring
+    C["ℂ<br/>complex<br/>a + bi"]:::ring
+    N -->|"⊆"| Z -->|"⊆"| Q -->|"⊆"| R -->|"⊆"| C
+```
+
 **Cartesian product.** Given sets A and B, the set of all *ordered pairs* `(a, b)` with `a ∈ A` and `b ∈ B` is written `A × B`. The familiar **xy-plane** is `ℝ × ℝ`, written `ℝ²`. The points `(2, 3)` and `(3, 2)` are different — order matters in a Cartesian product, unlike in a set.
 
 > **Saveliev pp. 12–17, 30–34** has many pictures of these ideas: marbles in a bag (a set is unordered), the xy-plane as ℝ × ℝ.
@@ -50,6 +61,23 @@ A **function** `f: A → B` is a rule that assigns to each element of A *exactly
 - `A` is the **domain** — the set of valid inputs.
 - `B` is the **codomain** — the set the outputs are drawn from.
 - The **image** (or **range**) is the actual set of outputs `{f(a) : a ∈ A}`. The image is a subset of the codomain, possibly smaller.
+
+```mermaid
+flowchart LR
+    classDef domain fill:#dbeafe,stroke:#1e40af,color:#1e3a8a,stroke-width:2px
+    classDef func fill:#fef3c7,stroke:#92400e,color:#78350f,stroke-width:2px
+    classDef codomain fill:#d1fae5,stroke:#065f46,color:#064e3b,stroke-width:2px
+    classDef image fill:#10b981,stroke:#047857,color:#fff,stroke-width:2px
+
+    A["Domain A<br/>(valid inputs)"]:::domain
+    F["f<br/>(the rule)"]:::func
+    B["Codomain B<br/>(outputs drawn from here)"]:::codomain
+    I["Image f(A)<br/>(actually-hit outputs)"]:::image
+
+    A -->|"x"| F -->|"f(x)"| B
+    I -.->|"⊆"| B
+    F -.->|"hits"| I
+```
 
 **Three crucial properties** a function may or may not have:
 
@@ -84,6 +112,30 @@ Read it as: *"f respects linear combinations."* Whatever combination you build o
 
 **Counterexample.** `f(x) = 3x + 1` is **not** linear, even though its graph is a straight line! Check: `f(1 + 1) = f(2) = 7`, but `f(1) + f(1) = 4 + 4 = 8`. They differ. (Mathematicians call `3x + 1` an *affine* function — a linear function plus a constant shift.)
 
+**The linearity test as a flowchart:**
+
+```mermaid
+flowchart TD
+    classDef test fill:#fef3c7,stroke:#92400e,color:#78350f,stroke-width:2px
+    classDef yes fill:#10b981,stroke:#047857,color:#fff,stroke-width:2px
+    classDef no fill:#ef4444,stroke:#991b1b,color:#fff,stroke-width:2px
+
+    START(["Given a function f"]):::test
+    Q1{"Is f(0) = 0 ?"}:::test
+    Q2{"Is f(x + y) = f(x) + f(y)<br/>for all x, y ?"}:::test
+    Q3{"Is f(c·x) = c·f(x)<br/>for all scalars c ?"}:::test
+    LIN["✓ LINEAR"]:::yes
+    NOTLIN["✗ NOT linear"]:::no
+
+    START --> Q1
+    Q1 -->|no| NOTLIN
+    Q1 -->|yes| Q2
+    Q2 -->|no| NOTLIN
+    Q2 -->|yes| Q3
+    Q3 -->|no| NOTLIN
+    Q3 -->|yes| LIN
+```
+
 > **Trap:** in high school, "linear" meant *"its graph is a line"*, which includes `y = mx + b`. In linear algebra, "linear" is stricter — the graph must pass through the origin. A linear function always sends 0 to 0, because `f(0) = f(0 + 0) = f(0) + f(0)` ⟹ `f(0) = 0`.
 
 **The only linear functions ℝ → ℝ are `f(x) = mx`** for some constant m. (Try to convince yourself why no other shape works.)
@@ -101,6 +153,22 @@ So far our inputs and outputs were single real numbers. But the real reason line
 - A grayscale 28×28 image has 784 pixels.
 - A monthly stock portfolio has hundreds of holdings.
 - A neural network's hidden layer has thousands of activations.
+
+```mermaid
+flowchart LR
+    classDef seen fill:#dbeafe,stroke:#1e40af,color:#1e3a8a,stroke-width:2px
+    classDef edge fill:#a78bfa,stroke:#6d28d9,color:#fff,stroke-width:2px
+    classDef abstract fill:#f59e0b,stroke:#b45309,color:#fff,stroke-width:2px
+
+    R1["ℝ¹<br/>line<br/>1 number"]:::seen
+    R2["ℝ²<br/>plane<br/>(x, y)"]:::seen
+    R3["ℝ³<br/>space<br/>RGB color"]:::seen
+    R4["ℝ⁴<br/>spacetime?<br/>can't picture"]:::edge
+    R784["ℝ⁷⁸⁴<br/>28×28 image<br/>algebra only"]:::abstract
+    Rn["ℝⁿ<br/>n as big as you want"]:::abstract
+
+    R1 --> R2 --> R3 --> R4 --> R784 --> Rn
+```
 
 We bundle these into ordered tuples and call the set of all such tuples **ℝⁿ**:
 
@@ -125,6 +193,21 @@ A **vector** in ℝⁿ is an element of ℝⁿ — that is, an n-tuple of real n
 v =  ⎢ x₂ ⎥
      ⎢ ⋮  ⎥
      ⎣ xₙ ⎦
+```
+
+```mermaid
+flowchart LR
+    classDef same fill:#fef3c7,stroke:#92400e,color:#78350f,stroke-width:3px
+    classDef tuple fill:#dbeafe,stroke:#1e40af,color:#1e3a8a,stroke-width:2px
+    classDef arrow fill:#10b981,stroke:#047857,color:#fff,stroke-width:2px
+
+    V["v<br/><i>one mathematical object</i>"]:::same
+    T["[3, 4]<br/>n-tuple<br/>(use this for computing)"]:::tuple
+    A["arrow from origin to (3, 4)<br/>(use this for intuition)"]:::arrow
+
+    V --- T
+    V --- A
+    T <-.->|"same object,<br/>two pictures"| A
 ```
 
 But this same object has **two equally valid mental pictures**:
@@ -171,15 +254,36 @@ The miracle — and the reason the subject is so beautiful — is that **every s
 
 The next nine chapters unpack this miracle:
 
-- **Ch 2:** vector geometry in detail — dot products, projections, angles.
-- **Ch 3:** systems of linear equations — when does `Ax = b` have a solution?
-- **Ch 4:** linear transformations and their matrices, formally.
-- **Ch 5:** the geometry hidden inside any matrix — image, kernel, basis, dimension.
-- **Ch 6:** the same ideas in *abstract* vector spaces (polynomials, functions, …).
-- **Ch 7:** orthogonality — projecting onto subspaces, fitting data with least squares.
-- **Ch 8:** determinants — a single number that captures volume and invertibility.
-- **Ch 9:** eigenvalues — the directions a transformation only stretches.
-- **Ch 10:** SVD — the most useful matrix factorization in all of applied mathematics.
+```mermaid
+flowchart TD
+    classDef now fill:#3b82f6,stroke:#1e40af,color:#fff,stroke-width:3px
+    classDef foundation fill:#a78bfa,stroke:#6d28d9,color:#fff,stroke-width:2px
+    classDef advanced fill:#f59e0b,stroke:#b45309,color:#fff,stroke-width:2px
+    classDef capstone fill:#ec4899,stroke:#9d174d,color:#fff,stroke-width:2px
+
+    C1["Ch 1 — Foundations<br/>functions · linearity · ℝⁿ<br/><i>you are here</i>"]:::now
+    C2["Ch 2 — Vector geometry<br/>dot product · projection · angle"]:::foundation
+    C3["Ch 3 — Linear systems<br/>Gauss-Jordan · Ax = b"]:::foundation
+    C4["Ch 4 — Linear transformations<br/>matrices as maps"]:::foundation
+    C5["Ch 5 — Subspaces<br/>image · kernel · basis · dimension"]:::foundation
+    C6["Ch 6 — Abstract vector spaces<br/>polynomials, functions as 'vectors'"]:::advanced
+    C7["Ch 7 — Orthogonality &amp; least squares<br/>Gram-Schmidt · QR · data fitting"]:::advanced
+    C8["Ch 8 — Determinants<br/>volume · invertibility"]:::advanced
+    C9["Ch 9 — Eigenvalues &amp; diagonalization<br/>directions of pure stretch"]:::advanced
+    C10["Ch 10 — SVD &amp; applications<br/>image compression · PCA · everything"]:::capstone
+
+    C1 --> C2
+    C1 --> C3
+    C2 --> C4
+    C3 --> C4
+    C4 --> C5
+    C5 --> C6
+    C5 --> C7
+    C5 --> C8
+    C8 --> C9
+    C7 --> C10
+    C9 --> C10
+```
 
 You're standing at the trailhead. Let's go.
 
