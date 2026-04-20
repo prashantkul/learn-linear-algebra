@@ -143,16 +143,16 @@ Together they give you the same idea from four directions. That redundancy is th
 
 | # | Chapter | Sources (Bretscher · Saveliev) | NotebookLM 🎧 | 🐍 Python | 🧮 SageMath |
 |---|---|---|---|---|---|
-| 1 | Foundations: sets, functions, linearity, ℝⁿ | App. A · Ch. 1, 2, 4.1–4.5 | [open ↗](https://notebooklm.google.com/notebook/d52edb24-e2e2-43b6-840d-a2c5d7a47519) | [view](chapters/01-foundations/code/python/01_foundations.ipynb) | [view](chapters/01-foundations/code/sage/01_foundations.ipynb) |
-| 2 | Vectors & vector geometry (dot product, projections) | App. A · 4.6–4.11 | [open ↗](https://notebooklm.google.com/notebook/457ac832-f039-4da2-b724-e98b43b40983) | [view](chapters/02-vectors-and-geometry/code/python/02_vectors_and_geometry.ipynb) | [view](chapters/02-vectors-and-geometry/code/sage/02_vectors_and_geometry.ipynb) |
-| 3 | Linear systems & Gauss–Jordan elimination | Ch. 1 · §1.1 | [open ↗](https://notebooklm.google.com/notebook/903ab7ba-0ab1-45d2-8870-af522afaad77) | [view](chapters/03-linear-systems/code/python/03_linear_systems.ipynb) | [view](chapters/03-linear-systems/code/sage/03_linear_systems.ipynb) |
-| 4 | Linear transformations & matrix algebra | Ch. 2 · §3.4, 5.1–5.4, 5.10–5.11 | _soon_ | _soon_ | _soon_ |
-| 5 | Subspaces, image/kernel, basis, dimension, coordinates | Ch. 3 · §5.8 | _soon_ | _soon_ | _soon_ |
-| 6 | Abstract linear (vector) spaces | Ch. 4 · — | _soon_ | _soon_ | _soon_ |
-| 7 | Orthogonality, projections, Gram–Schmidt, QR, least squares | Ch. 5 · §4.10–4.11 | _soon_ | _soon_ | _soon_ |
-| 8 | Determinants — algebra and geometry | Ch. 6 · §5.5 | _soon_ | _soon_ | _soon_ |
-| 9 | Eigenvalues, eigenvectors, diagonalization, dynamical systems | Ch. 7 · §5.6–5.7, 5.9 | _soon_ | _soon_ | _soon_ |
-| 10 | Symmetric matrices, quadratic forms, SVD, applications | Ch. 8, 9 · (Ch. 6 as bonus) | _soon_ | _soon_ | _soon_ |
+| 1 | [Foundations: sets, functions, linearity, ℝⁿ](chapters/01-foundations/notes.md) | App. A · Ch. 1, 2, 4.1–4.5 | [open ↗](https://notebooklm.google.com/notebook/d52edb24-e2e2-43b6-840d-a2c5d7a47519) | [view](chapters/01-foundations/code/python/01_foundations.ipynb) | [view](chapters/01-foundations/code/sage/01_foundations.ipynb) |
+| 2 | [Vectors & vector geometry (dot product, projections)](chapters/02-vectors-and-geometry/notes.md) | App. A · 4.6–4.11 | [open ↗](https://notebooklm.google.com/notebook/457ac832-f039-4da2-b724-e98b43b40983) | [view](chapters/02-vectors-and-geometry/code/python/02_vectors_and_geometry.ipynb) | [view](chapters/02-vectors-and-geometry/code/sage/02_vectors_and_geometry.ipynb) |
+| 3 | [Linear systems & Gauss–Jordan elimination](chapters/03-linear-systems/notes.md) | Ch. 1 · §1.1 | [open ↗](https://notebooklm.google.com/notebook/903ab7ba-0ab1-45d2-8870-af522afaad77) | [view](chapters/03-linear-systems/code/python/03_linear_systems.ipynb) | [view](chapters/03-linear-systems/code/sage/03_linear_systems.ipynb) |
+| 4 | [Linear transformations & matrix algebra](chapters/04-linear-transformations/notes.md) | Ch. 2 · §3.4, 5.1–5.4, 5.10–5.11 | _soon_ | _soon_ | _soon_ |
+| 5 | [Subspaces, image/kernel, basis, dimension, coordinates](chapters/05-subspaces-basis-dimension/notes.md) | Ch. 3 · §5.8 | _soon_ | _soon_ | _soon_ |
+| 6 | [Abstract linear (vector) spaces](chapters/06-abstract-vector-spaces/notes.md) | Ch. 4 · — | _soon_ | _soon_ | _soon_ |
+| 7 | [Orthogonality, projections, Gram–Schmidt, QR, least squares](chapters/07-orthogonality-and-least-squares/notes.md) | Ch. 5 · §4.10–4.11 | _soon_ | _soon_ | _soon_ |
+| 8 | [Determinants — algebra and geometry](chapters/08-determinants/notes.md) | Ch. 6 · §5.5 | _soon_ | _soon_ | _soon_ |
+| 9 | [Eigenvalues, eigenvectors, diagonalization, dynamical systems](chapters/09-eigenvalues-and-diagonalization/notes.md) | Ch. 7 · §5.6–5.7, 5.9 | _soon_ | _soon_ | _soon_ |
+| 10 | [Symmetric matrices, quadratic forms, SVD, applications](chapters/10-svd-and-applications/notes.md) | Ch. 8, 9 · (Ch. 6 as bonus) | _soon_ | _soon_ | _soon_ |
 
 **Running the notebooks**
 
