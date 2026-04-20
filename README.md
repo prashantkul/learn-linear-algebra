@@ -47,7 +47,7 @@ The extractor handles per-book page-number offsets (Bretscher's front matter pus
 ./scripts/nlm-init-chapter.sh chapters/01-foundations --all --dry-run
 ```
 
-Individual artifact flags (`--audio`, `--quiz`, `--mindmap`, `--slides`) can be combined as you like.
+Individual artifact flags (`--audio`, `--quiz`, `--mindmap`, `--slides`, `--infographic`) can be combined as you like.
 
 The script creates a notebook named *"LA Ch.NN — chapter-slug"* and uploads `notes.md`, `worked-examples.md`, `exercises.md`, and `sources.md`. With `--with-extracts`, it also uploads the per-chapter extracted PDFs.
 

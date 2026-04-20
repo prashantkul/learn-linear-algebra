@@ -18,7 +18,8 @@
 #   --quiz            Generate a quiz.
 #   --mindmap         Generate a mind map.
 #   --slides          Generate a slide deck.
-#   --all             Shorthand for: --with-extracts --audio --quiz --mindmap --slides
+#   --infographic     Generate an infographic.
+#   --all             Shorthand for: --with-extracts --audio --quiz --mindmap --slides --infographic
 #   --dry-run         Print what would happen without doing anything.
 
 set -euo pipefail
@@ -36,6 +37,7 @@ WANT_AUDIO=0
 WANT_QUIZ=0
 WANT_MINDMAP=0
 WANT_SLIDES=0
+WANT_INFOGRAPHIC=0
 DRY_RUN=0
 
 for arg in "$@"; do
@@ -45,12 +47,14 @@ for arg in "$@"; do
     --quiz)          WANT_QUIZ=1 ;;
     --mindmap)       WANT_MINDMAP=1 ;;
     --slides)        WANT_SLIDES=1 ;;
+    --infographic)   WANT_INFOGRAPHIC=1 ;;
     --all)
       WITH_EXTRACTS=1
       WANT_AUDIO=1
       WANT_QUIZ=1
       WANT_MINDMAP=1
       WANT_SLIDES=1
+      WANT_INFOGRAPHIC=1
       ;;
     --dry-run) DRY_RUN=1 ;;
     *) echo "unknown flag: $arg" >&2; exit 1 ;;
@@ -137,6 +141,11 @@ if [[ "$WANT_SLIDES" == "1" ]]; then
   echo
   echo "==> Generating slide deck"
   run nlm slides create "$NOTEBOOK_ID" --format detailed_deck --length default -y
+fi
+if [[ "$WANT_INFOGRAPHIC" == "1" ]]; then
+  echo
+  echo "==> Generating infographic"
+  run nlm infographic create "$NOTEBOOK_ID" -y
 fi
 
 echo
