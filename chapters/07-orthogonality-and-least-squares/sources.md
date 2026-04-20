@@ -21,5 +21,6 @@
 
 ## TODO
 
-- [ ] Write `notes.md`, `worked-examples.md`, `exercises.md`
-- [ ] Build `code/07_least_squares.ipynb` (line fitting, polynomial fitting, QR via `numpy.linalg.qr`)
+- [x] Write `notes.md`, `worked-examples.md`, `exercises.md`
+- [x] Build Python notebook (`code/python/07_orthogonality.ipynb`) — Gram–Schmidt from scratch, QR cross-check, 3D projection plots, line/cubic least-squares with plots, normal equations vs QR conditioning, L² Legendre and `sin(πx/2)` projection
+- [x] Build SageMath notebook (`code/sage/07_orthogonality.ipynb`) — symbolic ONB, projection matrices in QQ, Gram–Schmidt + normalization, QR in `AA`, exact least squares, L² inner product on `PolynomialRing(QQ)` with orthogonal Legendre polynomials, 5 exercises with solutions
