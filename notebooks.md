@@ -10,7 +10,7 @@ Each chapter also has two Jupyter notebooks: a Python/NumPy one (numerical, with
 | 2 | Vectors and vector geometry | [Open in NotebookLM ↗](https://notebooklm.google.com/notebook/457ac832-f039-4da2-b724-e98b43b40983) | [view ipynb](chapters/02-vectors-and-geometry/code/python/02_vectors_and_geometry.ipynb) | [view ipynb](chapters/02-vectors-and-geometry/code/sage/02_vectors_and_geometry.ipynb) |
 | 3 | Linear systems & Gauss–Jordan elimination | [Open in NotebookLM ↗](https://notebooklm.google.com/notebook/903ab7ba-0ab1-45d2-8870-af522afaad77) | [view ipynb](chapters/03-linear-systems/code/python/03_linear_systems.ipynb) | [view ipynb](chapters/03-linear-systems/code/sage/03_linear_systems.ipynb) |
 | 4 | Linear transformations & matrix algebra | [Open in NotebookLM ↗](https://notebooklm.google.com/notebook/140962a0-9c09-49af-9830-b8ad42c96c3c) | [view ipynb](chapters/04-linear-transformations/code/python/04_linear_transformations.ipynb) | [view ipynb](chapters/04-linear-transformations/code/sage/04_linear_transformations.ipynb) |
-| 5 | Subspaces, image/kernel, basis, dimension | _coming soon_ | _coming soon_ | _coming soon_ |
+| 5 | Subspaces, image/kernel, basis, dimension | [Open in NotebookLM ↗](https://notebooklm.google.com/notebook/c542121c-e617-4e61-9735-69fd5e2d3983) | [view ipynb](chapters/05-subspaces-basis-dimension/code/python/05_subspaces.ipynb) | [view ipynb](chapters/05-subspaces-basis-dimension/code/sage/05_subspaces.ipynb) |
 | 6 | Abstract linear (vector) spaces | _coming soon_ | _coming soon_ | _coming soon_ |
 | 7 | Orthogonality, projections, Gram–Schmidt, QR, least squares | _coming soon_ | _coming soon_ | _coming soon_ |
 | 8 | Determinants — algebra and geometry | _coming soon_ | _coming soon_ | _coming soon_ |

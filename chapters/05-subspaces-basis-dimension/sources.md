@@ -19,5 +19,6 @@
 
 ## TODO
 
-- [ ] Write `notes.md`, `worked-examples.md`, `exercises.md`
-- [ ] Build `code/05_subspaces.ipynb` (compute null space, column space, rank using NumPy)
+- [x] Write `notes.md`, `worked-examples.md`, `exercises.md`
+- [x] Build Python notebook (`code/python/05_subspaces.ipynb`) — RREF from scratch, image/kernel bases, rank–nullity on random matrices, coordinates/change of basis, polynomial fitting
+- [x] Build SageMath notebook (`code/sage/05_subspaces.ipynb`) — symbolic subspace axioms, hand vs. built-in image/kernel, invertible matrix theorem, polynomial subspace, 5 exercises with solutions
