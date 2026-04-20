@@ -7,7 +7,7 @@ Each chapter also has two Jupyter notebooks: a Python/NumPy one (numerical, with
 | # | Chapter | NotebookLM 🎧 | 🐍 Python | 🧮 SageMath |
 |---|---|---|---|---|
 | 1 | Foundations: sets, functions, linearity, ℝⁿ | [Open in NotebookLM ↗](https://notebooklm.google.com/notebook/d52edb24-e2e2-43b6-840d-a2c5d7a47519) | [view ipynb](chapters/01-foundations/code/python/01_foundations.ipynb) | [view ipynb](chapters/01-foundations/code/sage/01_foundations.ipynb) |
-| 2 | Vectors and vector geometry | _coming soon_ | [view ipynb](chapters/02-vectors-and-geometry/code/python/02_vectors_and_geometry.ipynb) | [view ipynb](chapters/02-vectors-and-geometry/code/sage/02_vectors_and_geometry.ipynb) |
+| 2 | Vectors and vector geometry | [Open in NotebookLM ↗](https://notebooklm.google.com/notebook/457ac832-f039-4da2-b724-e98b43b40983) | [view ipynb](chapters/02-vectors-and-geometry/code/python/02_vectors_and_geometry.ipynb) | [view ipynb](chapters/02-vectors-and-geometry/code/sage/02_vectors_and_geometry.ipynb) |
 | 3 | Linear systems & Gauss–Jordan elimination | _coming soon_ | _coming soon_ | _coming soon_ |
 | 4 | Linear transformations & matrix algebra | _coming soon_ | _coming soon_ | _coming soon_ |
 | 5 | Subspaces, image/kernel, basis, dimension | _coming soon_ | _coming soon_ | _coming soon_ |

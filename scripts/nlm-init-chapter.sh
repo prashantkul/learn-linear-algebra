@@ -19,8 +19,9 @@
 #   --mindmap         Generate a mind map.
 #   --slides          Generate a slide deck.
 #   --infographic     Generate an infographic.
+#   --reports         Generate a Briefing Doc + a Study Guide report.
 #   --share           Make the notebook publicly accessible (anyone with link can view + copy).
-#   --all             Shorthand for: --with-extracts --audio --quiz --mindmap --slides --infographic --share
+#   --all             Shorthand for: --with-extracts --audio --quiz --mindmap --slides --infographic --reports --share
 #   --dry-run         Print what would happen without doing anything.
 
 set -euo pipefail
@@ -39,6 +40,7 @@ WANT_QUIZ=0
 WANT_MINDMAP=0
 WANT_SLIDES=0
 WANT_INFOGRAPHIC=0
+WANT_REPORTS=0
 WANT_SHARE=0
 DRY_RUN=0
 
@@ -50,6 +52,7 @@ for arg in "$@"; do
     --mindmap)       WANT_MINDMAP=1 ;;
     --slides)        WANT_SLIDES=1 ;;
     --infographic)   WANT_INFOGRAPHIC=1 ;;
+    --reports)       WANT_REPORTS=1 ;;
     --share)         WANT_SHARE=1 ;;
     --all)
       WITH_EXTRACTS=1
@@ -58,6 +61,7 @@ for arg in "$@"; do
       WANT_MINDMAP=1
       WANT_SLIDES=1
       WANT_INFOGRAPHIC=1
+      WANT_REPORTS=1
       WANT_SHARE=1
       ;;
     --dry-run) DRY_RUN=1 ;;
@@ -150,6 +154,14 @@ if [[ "$WANT_INFOGRAPHIC" == "1" ]]; then
   echo
   echo "==> Generating infographic"
   run nlm infographic create "$NOTEBOOK_ID" -y
+fi
+if [[ "$WANT_REPORTS" == "1" ]]; then
+  echo
+  echo "==> Generating Briefing Doc report"
+  run nlm report create "$NOTEBOOK_ID" --format "Briefing Doc" -y
+  echo
+  echo "==> Generating Study Guide report"
+  run nlm report create "$NOTEBOOK_ID" --format "Study Guide" -y
 fi
 if [[ "$WANT_SHARE" == "1" ]]; then
   echo
