@@ -19,7 +19,9 @@
 
 ## TODO
 
-- [ ] Write `notes.md`
-- [ ] Write `worked-examples.md`
-- [ ] Write `exercises.md`
-- [ ] Build `code/02_vectors.ipynb`
+- [x] Write `notes.md`
+- [x] Write `worked-examples.md`
+- [x] Write `exercises.md`
+- [x] Build `code/python/02_vectors_and_geometry.ipynb`
+- [x] Build `code/sage/02_vectors_and_geometry.ipynb`
+- [ ] Publish NotebookLM and update `notebooks.md` link

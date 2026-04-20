@@ -4,6 +4,23 @@
 
 A self-study curriculum in 10 chapters, anchored on two textbooks. Each chapter ships with notes, worked examples, exercises, **two Jupyter notebooks** (NumPy for numerics, SageMath for exact symbolics — runnable free in [CoCalc](https://cocalc.com/)), and a **pre-built [NotebookLM](https://notebooklm.google.com/) notebook** with audio overview (podcast), quiz, mind map, slide deck, and infographic.
 
+## 👋 A note from me
+
+Hi — I'm **Prashant Kulkarni**. I started this because I'm convinced we've been studying math the wrong way for a long time, and 2026 is finally the year that changes.
+
+Here is how I think learning should feel:
+
+- **Interactive, not passive.** You should be able to *click, run, change a number, and watch what happens* — not just stare at a static page and hope it sticks. Every chapter here ships with two runnable Jupyter notebooks (NumPy + SageMath) precisely so you can poke the math.
+- **Conversational.** When you don't get something, you should be able to *ask* — out loud, in plain English. Modern AI tutors (NotebookLM, Claude, ChatGPT) are absurdly good at *"explain this to me again, but as if I were a chemist"* or *"give me one more example with smaller numbers."* That's a superpower previous generations of students never had. Use it shamelessly.
+- **Fun.** A good audio overview on a walk. A quiz on the train. A slide deck before bed. A Sage notebook with the cat in your lap. If the learning isn't fun, you won't come back tomorrow — and the math does not care if you are tired.
+- **Collaborative.** Studying alone is the slow path. Studying *with others* — friends, teachers, AI co-pilots, the open-source community — is faster, deeper, and actually enjoyable. This repo is meant to be remixed, forked, criticized, improved. Pair up with a friend and race through the exercises. Spin up a study group on Discord. Open a PR when you spot a typo. Open an issue when an explanation falls flat. The whole thing gets better the more eyes are on it.
+
+That is the bet behind this curriculum: take a rigorous classical text (Bretscher) and a beautifully visual one (Saveliev), wrap them in modern interactive tools (NotebookLM, Jupyter, SageMath, Mermaid), and learn linear algebra the way 2026 actually lets you learn — together.
+
+— *Prashant* · [kulkarniprashants@gmail.com](mailto:kulkarniprashants@gmail.com) · [@prashantkul on GitHub](https://github.com/prashantkul)
+
+---
+
 ## 🎧 Start here
 
 You don't need to clone anything. **[Open the NotebookLM index →](notebooks.md)**
@@ -127,7 +144,7 @@ Together they give you the same idea from four directions. That redundancy is th
 | # | Chapter | Sources (Bretscher · Saveliev) | NotebookLM 🎧 | 🐍 Python | 🧮 SageMath |
 |---|---|---|---|---|---|
 | 1 | Foundations: sets, functions, linearity, ℝⁿ | App. A · Ch. 1, 2, 4.1–4.5 | [open ↗](https://notebooklm.google.com/notebook/d52edb24-e2e2-43b6-840d-a2c5d7a47519) | [view](chapters/01-foundations/code/python/01_foundations.ipynb) | [view](chapters/01-foundations/code/sage/01_foundations.ipynb) |
-| 2 | Vectors & vector geometry (dot product, projections) | App. A · 4.6–4.11 | _soon_ | _soon_ | _soon_ |
+| 2 | Vectors & vector geometry (dot product, projections) | App. A · 4.6–4.11 | _soon_ | [view](chapters/02-vectors-and-geometry/code/python/02_vectors_and_geometry.ipynb) | [view](chapters/02-vectors-and-geometry/code/sage/02_vectors_and_geometry.ipynb) |
 | 3 | Linear systems & Gauss–Jordan elimination | Ch. 1 · §1.1 | _soon_ | _soon_ | _soon_ |
 | 4 | Linear transformations & matrix algebra | Ch. 2 · §3.4, 5.1–5.4, 5.10–5.11 | _soon_ | _soon_ | _soon_ |
 | 5 | Subspaces, image/kernel, basis, dimension, coordinates | Ch. 3 · §5.8 | _soon_ | _soon_ | _soon_ |
