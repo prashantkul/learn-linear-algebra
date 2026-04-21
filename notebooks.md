@@ -13,7 +13,7 @@ Each chapter also has two Jupyter notebooks: a Python/NumPy one (numerical, with
 | 5 | Subspaces, image/kernel, basis, dimension | [Open in NotebookLM ↗](https://notebooklm.google.com/notebook/c542121c-e617-4e61-9735-69fd5e2d3983) | [view ipynb](chapters/05-subspaces-basis-dimension/code/python/05_subspaces.ipynb) | [view ipynb](chapters/05-subspaces-basis-dimension/code/sage/05_subspaces.ipynb) |
 | 6 | Abstract linear (vector) spaces | [Open in NotebookLM ↗](https://notebooklm.google.com/notebook/14ad0e7d-6164-4589-93d8-37777a58b05f) | [view ipynb](chapters/06-abstract-vector-spaces/code/python/06_abstract_spaces.ipynb) | [view ipynb](chapters/06-abstract-vector-spaces/code/sage/06_abstract_spaces.ipynb) |
 | 7 | Orthogonality, projections, Gram–Schmidt, QR, least squares | [Open in NotebookLM ↗](https://notebooklm.google.com/notebook/f887b942-aaad-4eb7-b3fb-a5b3b822a23e) | [view ipynb](chapters/07-orthogonality-and-least-squares/code/python/07_orthogonality.ipynb) | [view ipynb](chapters/07-orthogonality-and-least-squares/code/sage/07_orthogonality.ipynb) |
-| 8 | Determinants — algebra and geometry | _coming soon_ | _coming soon_ | _coming soon_ |
+| 8 | Determinants — algebra and geometry | [Open in NotebookLM ↗](https://notebooklm.google.com/notebook/5fcb942c-66ad-4aee-a4f4-c073d428722f) | [view ipynb](chapters/08-determinants/code/python/08_determinants.ipynb) | [view ipynb](chapters/08-determinants/code/sage/08_determinants.ipynb) |
 | 9 | Eigenvalues, eigenvectors, diagonalization, dynamical systems | _coming soon_ | _coming soon_ | _coming soon_ |
 | 10 | Symmetric matrices, quadratic forms, SVD, applications | _coming soon_ | _coming soon_ | _coming soon_ |
 

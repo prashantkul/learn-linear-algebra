@@ -17,5 +17,6 @@
 
 ## TODO
 
-- [ ] Write `notes.md`, `worked-examples.md`, `exercises.md`
-- [ ] Build `code/08_determinants.ipynb` (compute det via cofactor recursion, via LU, and via `numpy.linalg.det`; visualize area scaling)
+- [x] Write `notes.md`, `worked-examples.md`, `exercises.md`
+- [x] Build Python notebook (`code/python/08_determinants.ipynb`) — cofactor recursion from scratch, LU-based det, timing comparison, 2D/3D geometric visualizations of area/volume scaling, row-operation verification, Cramer's Rule, adjugate computation, characteristic-polynomial plot
+- [x] Build SageMath notebook (`code/sage/08_determinants.ipynb`) — three det methods over QQ, symbolic Vandermonde identity, elementary-row-op rules, Cramer over QQ, adjugate formula, characteristic polynomial factored over QQ with roots over AA, 5 exercises with solutions
