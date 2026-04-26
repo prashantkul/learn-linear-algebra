@@ -181,3 +181,8 @@ Tutorial material (notes, worked examples, exercises, code, scripts) is licensed
 ## Contributing
 
 Want to improve an explanation, add a worked example, fix an exercise, or contribute a translation? See [CONTRIBUTING.md](CONTRIBUTING.md) for the dev setup (uv, PDF extraction, NotebookLM publishing pipeline) and how to send a PR.
+
+## Related external project
+
+- [Linear Algebra World (GraphMath)](https://www.graphmath.com/la/) — visual and geometric linear algebra tutorials, diagrams and links to iOS/macOS interactive tools
+- [GraphMath GitHub](https://github.com/ebyazrova/graphmath-la) — selected linear algebra visuals and related materials
